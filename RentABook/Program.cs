@@ -21,6 +21,19 @@ namespace RentABook
             builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
