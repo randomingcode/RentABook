@@ -14,15 +14,18 @@ namespace RentABook
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            var app = builder.Build();
+
+
 
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-            });
+            
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
+
+            var app = builder.Build();
 
             if (args.Length == 1 && args[0].ToLower() == "seeddata")
             {

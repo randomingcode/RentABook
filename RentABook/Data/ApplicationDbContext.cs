@@ -14,6 +14,9 @@ namespace RentABook.Data
 
         public DbSet<Price> Prices { get; set; }
 
+   
+
+        
 
     }
 
