@@ -20,23 +20,23 @@ namespace RentABook.Repository
 
         public bool Delete(Book book)
         {
-            throw new NotImplementedException();
+            _context.Remove(book);
+            return Save();
         }
 
-        public Task<IEnumerable<Book>> GetAll()
+        public async Task<IEnumerable<Book>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Books.ToListAsync();
         }
 
-        public Task<IEnumerable<Book>> GetAllBooksByAuthor(string author)
+        public async Task<IEnumerable<Book>> GetAllBooksByAuthor(string author)
         {
-            throw new NotImplementedException();
+            return await _context.Books.Include(x => x.Price).Where(a => a.Author == author).ToListAsync();
         }
 
         public async Task<Book> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
-            //return await _context.Books.Include(a => a.Price).Where( c => c.Id == id).ToListAsync();
+            return await _context.Books.Include(a => a.Price).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public bool Save()
