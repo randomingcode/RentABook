@@ -1,5 +1,4 @@
 ﻿using RentABook.Models;
-using RentABook.Data;
 
 namespace RentABook.Data
 {

@@ -28,7 +28,7 @@ namespace RentABook.Repository
 
         public async Task<IEnumerable<Book>> GetAll()
         {
-            return await _context.Books.ToListAsync();
+            return await _context.Books.Include(a => a.Price).ToListAsync();
         }
 
         public async Task<IEnumerable<Book>> GetAllBooksByAuthor(string author)
