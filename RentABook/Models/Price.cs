@@ -4,13 +4,17 @@
     {
         public Price()
         {
-            DiscountedPrice = OriginalPrice;
+            if(DiscountRatio > 0)
+            {
+                DiscountedPrice = OriginalPrice * DiscountRatio;
+            }
+              
         }
         public int Id { get; set; }
 
         public double OriginalPrice { get; set; }
 
-        public float? DiscountRatio { get; set; }
+        public double DiscountRatio { get; set; }
 
         public double DiscountedPrice { get; set; }
 
