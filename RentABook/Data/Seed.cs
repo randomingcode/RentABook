@@ -256,10 +256,7 @@ namespace RentABook.Data
                                 DiscountRatio = 0.3f,
 
                             }
-
-
                         }
-
                     });
                     context.SaveChanges();
                 }
