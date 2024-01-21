@@ -16,7 +16,7 @@
 
         public double DiscountRatio { get; set; }
 
-        public double DiscountedPrice { get; set; }
+        public double DiscountedPrice { get;set; }
 
         public Book Book { get; set; }
 

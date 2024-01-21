@@ -5,7 +5,7 @@
 namespace RentABook.Migrations
 {
     /// <inheritdoc />
-    public partial class @as : Migration
+    public partial class fddf : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

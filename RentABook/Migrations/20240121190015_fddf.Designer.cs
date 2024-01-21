@@ -11,8 +11,8 @@ using RentABook.Data;
 namespace RentABook.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240121182652_as")]
-    partial class @as
+    [Migration("20240121190015_fddf")]
+    partial class fddf
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
