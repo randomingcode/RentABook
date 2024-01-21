@@ -178,7 +178,7 @@ namespace RentABook.Data
                             Title = "Ficciones",
                             Year = 1965,
                             PriceId= 1,
-                           
+
                         }
 
                     });
