@@ -22,7 +22,7 @@ namespace RentABook
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer("Data Source=DESKTOP-TBT33NR;Initial Catalog=RentABookDb;Integrated Security=True;Connect Timeout=100;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
             var app = builder.Build();
