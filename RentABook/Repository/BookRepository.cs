@@ -19,7 +19,8 @@ namespace RentABook.Repository
         }
 
         public bool Delete(Book book)
-        {
+        {        
+            _context.Remove(book.Price);
             _context.Remove(book);
             return Save();
         }
@@ -48,6 +49,7 @@ namespace RentABook.Repository
 
         public bool Update(Book book)
         {
+            _context.Prices.Update(book.Price);
             _context.Books.Update(book);
             return Save();
         }
