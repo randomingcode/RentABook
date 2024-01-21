@@ -10,11 +10,10 @@ namespace RentABook.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-        private readonly IBookRepository _bookRepository;
 
-        public HomeController(ILogger<HomeController> logger,IBookRepository bookRepository)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _bookRepository = bookRepository;
+  
             _logger = logger;
         }
 
