@@ -1,4 +1,5 @@
 ﻿using RentABook.Models;
+using RentABook.Data;
 
 namespace RentABook.Data
 {
@@ -182,7 +183,9 @@ namespace RentABook.Data
                         }
 
                     });
-                    context.Prices.AddRange(new List<Price>()
+                    if (!context.Prices.Any())
+                    {
+                        context.Prices.AddRange(new List<Price>()
                     {
                         new Price() {
                             Id = 1,
@@ -267,12 +270,14 @@ namespace RentABook.Data
                             OriginalPrice = 45,
                             DiscountRatio = 0.3f,
                             DiscountedPrice = 8,
+
                         }
 
                     });
+                        context.SaveChanges();
 
-
-
+                    }
+                    
 
                 }
             }
