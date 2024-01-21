@@ -12,11 +12,11 @@ namespace RentABook.Data
 
         public DbSet<Book> Books { get; set; }
 
-        //public DbSet<Price> Prices { get; set; }
+        public DbSet<Price> Prices { get; set; }
 
-   
 
-        
+
+
 
     }
 

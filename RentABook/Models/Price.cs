@@ -2,10 +2,7 @@
 {
     public class Price
     {
-        public Price()
-        {
-            DiscountedPrice = OriginalPrice;
-        }
+ 
         public int Id { get; set; }
 
         public double OriginalPrice { get; set; }
@@ -15,6 +12,10 @@
         public double DiscountedPrice { get; set; }
 
         public Book Book { get; set; }
+
+        public string? BookName { get; set; }
+
+
 
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace RentABook.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RentABook.Models
 {
     public class Book
     {
@@ -19,10 +21,8 @@
 
         public string? Link { get; set; }
 
-
-        //public int //PriceId { get; set; }
-
-        //public Price? Price { get; set; }
+        public int PriceId { get; set; }
+        public Price? Price { get; set; }
 
     }
 }

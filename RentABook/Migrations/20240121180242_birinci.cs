@@ -5,7 +5,7 @@
 namespace RentABook.Migrations
 {
     /// <inheritdoc />
-    public partial class @as : Migration
+    public partial class birinci : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,8 @@ namespace RentABook.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OriginalPrice = table.Column<double>(type: "float", nullable: false),
                     DiscountRatio = table.Column<float>(type: "real", nullable: true),
-                    DiscountedPrice = table.Column<double>(type: "float", nullable: false)
+                    DiscountedPrice = table.Column<double>(type: "float", nullable: false),
+                    BookName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,23 +40,23 @@ namespace RentABook.Migrations
                     Page = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    //PriceId = table.Column<int>(type: "int", nullable: false)
+                    PriceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Books_Prices_//PriceId",
-                        column: x => x.//PriceId,
+                        name: "FK_Books_Prices_PriceId",
+                        column: x => x.PriceId,
                         principalTable: "Prices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_//PriceId",
+                name: "IX_Books_PriceId",
                 table: "Books",
-                column: "//PriceId",
+                column: "PriceId",
                 unique: true);
         }
 

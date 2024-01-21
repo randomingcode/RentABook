@@ -50,7 +50,7 @@ namespace RentABook.Migrations
                     b.Property<int>("Page")
                         .HasColumnType("int");
 
-                    b.Property<int>("//PriceId")
+                    b.Property<int>("PriceId")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -62,7 +62,7 @@ namespace RentABook.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("//PriceId")
+                    b.HasIndex("PriceId")
                         .IsUnique();
 
                     b.ToTable("Books");
@@ -75,6 +75,9 @@ namespace RentABook.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BookName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float?>("DiscountRatio")
                         .HasColumnType("real");
@@ -94,7 +97,7 @@ namespace RentABook.Migrations
                 {
                     b.HasOne("RentABook.Models.Price", "Price")
                         .WithOne("Book")
-                        .HasForeignKey("RentABook.Models.Book", "//PriceId")
+                        .HasForeignKey("RentABook.Models.Book", "PriceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
