@@ -20,9 +20,9 @@
         public string? Link { get; set; }
 
 
-        public int PriceId { get; set; }
+        //public int //PriceId { get; set; }
 
-        public Price? Price { get; set; }
+        //public Price? Price { get; set; }
 
     }
 }

@@ -7,7 +7,7 @@ namespace RentABook.Repository
 {
     public class PriceRepository : IPriceRepository
     {
-        private  ApplicationDbContext _context;
+        private ApplicationDbContext _context;
         public PriceRepository(ApplicationDbContext context)
         {
             _context = context;

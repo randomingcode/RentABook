@@ -39,23 +39,23 @@ namespace RentABook.Migrations
                     Page = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PriceId = table.Column<int>(type: "int", nullable: false)
+                    //PriceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Books_Prices_PriceId",
-                        column: x => x.PriceId,
+                        name: "FK_Books_Prices_//PriceId",
+                        column: x => x.//PriceId,
                         principalTable: "Prices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_PriceId",
+                name: "IX_Books_//PriceId",
                 table: "Books",
-                column: "PriceId",
+                column: "//PriceId",
                 unique: true);
         }
 

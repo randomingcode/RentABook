@@ -50,7 +50,7 @@ namespace RentABook.Repository
 
         public bool Update(Book book)
         {
-            _context.Prices.Update(book.Price);
+            //_context.Prices.Update(book.Price);
             _context.Books.Update(book);
             return Save();
         }

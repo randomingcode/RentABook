@@ -14,26 +14,9 @@ namespace RentABook
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-
-
-
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))

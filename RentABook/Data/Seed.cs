@@ -26,7 +26,7 @@ namespace RentABook.Data
                             Page = 209,
                             Title = "Things Fall Apart",
                             Year = 1958,
-                            PriceId = 2,
+                            //PriceId = 2,
 
                         },
                         new Book()
@@ -39,7 +39,7 @@ namespace RentABook.Data
                             Page = 209,
                             Title = "Things Fall Apart",
                             Year = 1958,
-                            PriceId = 3
+                            //////PriceId = 3
                         },
                         new Book()
                         {
@@ -52,7 +52,7 @@ namespace RentABook.Data
                             Page = 784,
                             Title = "Fairy tales",
                             Year = 1836,
-                            PriceId = 4
+                            //PriceId = 4
                         },
                         new Book()
                         {
@@ -64,7 +64,7 @@ namespace RentABook.Data
                             Page = 928,
                             Title = "The Divine Comedy",
                             Year = 1315,
-                            PriceId = 5
+                            //PriceId = 5
                         },
                         new Book()
                         {
@@ -76,7 +76,7 @@ namespace RentABook.Data
                             Page = 160,
                             Title = "The Epic Of Gilgamesh",
                             Year = -1700,
-                            PriceId = 6
+                            //PriceId = 6
                         },
                         new Book()
                         {
@@ -88,7 +88,7 @@ namespace RentABook.Data
                             Page = 176,
                             Title = "The Book Of Job",
                             Year = -600,
-                            PriceId = 7
+                            //PriceId = 7
 
                         },
 
@@ -102,7 +102,7 @@ namespace RentABook.Data
                             Page = 288,
                             Title = "One Thousand and One Nights",
                             Year = 1200,
-                            PriceId = 8
+                            //PriceId = 8
                         },
 
                         new Book()
@@ -115,7 +115,7 @@ namespace RentABook.Data
                             Page = 384,
                             Title = "Nj\u00e1l's Saga",
                             Year = 1350,
-                            PriceId = 8
+                            //PriceId = 8
                         },
                         new Book()
                         {
@@ -127,7 +127,7 @@ namespace RentABook.Data
                             Page = 226,
                             Title = "Pride and Prejudice",
                             Year = 1813,
-                            PriceId = 9
+                            //PriceId = 9
                         },
 
                         new Book()
@@ -140,7 +140,7 @@ namespace RentABook.Data
                             Page = 443,
                             Title = "Le P\u00e8re Goriot",
                             Year = 1835,
-                            PriceId = 10
+                            //PriceId = 10
                         },
 
                         new Book()
@@ -153,7 +153,7 @@ namespace RentABook.Data
                             Page = 256,
                             Title = "Molloy, Malone Dies, The Unnamable, the trilogy",
                             Year = 1952,
-                            PriceId = 11
+                            //PriceId = 11
                         },
 
                         new Book()
@@ -166,7 +166,7 @@ namespace RentABook.Data
                             Page = 1024,
                             Title = "The Decameron",
                             Year = 1351,
-                            PriceId = 12
+                            //PriceId = 12
                         },
                         new Book()
                         {
@@ -178,112 +178,116 @@ namespace RentABook.Data
                             Page = 224,
                             Title = "Ficciones",
                             Year = 1965,
-                            PriceId= 1,
+                            //PriceId= 1,
 
                         }
 
                     });
-                    if (!context.Prices.Any())
-                    {
-                        context.Prices.AddRange(new List<Price>()
-                    {
-                        new Price() {
-                            Id = 1,
-                            OriginalPrice = 10,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
+                    context.SaveChanges();
+                }
+
+                    //if (!context.Prices.Any())
+                    //{
+                    //    context.Prices.AddRange(new List<Price>()
+                    //{
+                    //    new Price() {
+                    //        Id = 1,
+                    //        OriginalPrice = 10,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
 
 
-                        },
-                            new Price() {
-                            Id = 2,
-                            OriginalPrice = 20,
-                            DiscountRatio = 0.25f,
-                            DiscountedPrice = 8,
-                        },
+                    //    },
+                    //        new Price() {
+                    //        Id = 2,
+                    //        OriginalPrice = 20,
+                    //        DiscountRatio = 0.25f,
+                    //        DiscountedPrice = 8,
+                    //    },
 
-                            new Price() {
-                            Id = 3,
-                            OriginalPrice = 30,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
-                            new Price() {
-                            Id = 4,
-                            OriginalPrice = 50,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
-                             new Price() {
-                            Id = 5,
-                            OriginalPrice = 80,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
-                            new Price() {
-                            Id = 6,
-                            OriginalPrice = 90,
-                            DiscountRatio = 0.4f,
-                            DiscountedPrice = 8,
+                    //        new Price() {
+                    //        Id = 3,
+                    //        OriginalPrice = 30,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //        new Price() {
+                    //        Id = 4,
+                    //        OriginalPrice = 50,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //         new Price() {
+                    //        Id = 5,
+                    //        OriginalPrice = 80,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //        new Price() {
+                    //        Id = 6,
+                    //        OriginalPrice = 90,
+                    //        DiscountRatio = 0.4f,
+                    //        DiscountedPrice = 8,
 
 
-                        },
-                            new Price() {
-                            Id = 7,
-                            OriginalPrice = 20,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
+                    //    },
+                    //        new Price() {
+                    //        Id = 7,
+                    //        OriginalPrice = 20,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
 
-                            new Price() {
-                            Id = 8,
-                            OriginalPrice = 40,
-                            DiscountRatio = 0.25f,
-                            DiscountedPrice = 8,
-                        },
-                            new Price() {
-                            Id = 9,
-                            OriginalPrice = 32,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
-                             new Price() {
-                            Id = 10,
-                            OriginalPrice = 28,
-                            DiscountRatio = 0.2f,
-                            DiscountedPrice = 8,
-                        },
-                            new Price() {
-                            Id = 11,
-                            OriginalPrice = 65,
-                            DiscountRatio = 0.4f,
-                            DiscountedPrice = 8,
-                        },
-                            new Price() {
-                            Id = 12,
-                            OriginalPrice = 12,
-                            DiscountRatio = 0.3f,
-                            DiscountedPrice = 8,
-                        },
-                             new Price() {
-                            Id = 13,
-                            OriginalPrice = 45,
-                            DiscountRatio = 0.3f,
-                            DiscountedPrice = 8,
+                    //        new Price() {
+                    //        Id = 8,
+                    //        OriginalPrice = 40,
+                    //        DiscountRatio = 0.25f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //        new Price() {
+                    //        Id = 9,
+                    //        OriginalPrice = 32,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //         new Price() {
+                    //        Id = 10,
+                    //        OriginalPrice = 28,
+                    //        DiscountRatio = 0.2f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //        new Price() {
+                    //        Id = 11,
+                    //        OriginalPrice = 65,
+                    //        DiscountRatio = 0.4f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //        new Price() {
+                    //        Id = 12,
+                    //        OriginalPrice = 12,
+                    //        DiscountRatio = 0.3f,
+                    //        DiscountedPrice = 8,
+                    //    },
+                    //         new Price() {
+                    //        Id = 13,
+                    //        OriginalPrice = 45,
+                    //        DiscountRatio = 0.3f,
+                    //        DiscountedPrice = 8,
 
-                        }
+                    //    }
 
-                    });
-                        context.SaveChanges();
+                    //});
 
-                    }
+                        //context.SaveChanges();
+
+                    //}
                     
 
                 }
             }
         }
     }
-}
+
 
 
 
