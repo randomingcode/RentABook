@@ -41,7 +41,9 @@ namespace RentABook
 
             var app = builder.Build();
 
-            if (args.Length == 1 && args[0].ToLower() == "seeddata")
+            
+
+            if (args.Length > 0 && args[0].ToLower() == "seeddata")
             {
                 Seed.SeedData(app);
             }
