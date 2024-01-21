@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RentABook.Data;
 using RentABook.Interfaces;
@@ -14,19 +15,23 @@ namespace RentABook
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            var app = builder.Build();
+            
 
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer("Data Source=DESKTOP-TBT33NR;Initial Catalog=RentABookDb;Integrated Security=True;Connect Timeout=100;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
             });
 
-            if (args.Length == 1 && args[0].ToLower() == "seeddata")
+            var app = builder.Build();
+
+            if (args.Length >0 && args[0].ToLower() == "seeddata")
             {
+                
                 Seed.SeedData(app);
+
             }
 
             // Configure the HTTP request pipeline.
