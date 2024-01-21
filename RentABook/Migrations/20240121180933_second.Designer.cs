@@ -12,8 +12,8 @@ using RentABook.Data;
 namespace RentABook.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240121163352_ilk")]
-    partial class ilk
+    [Migration("20240121180933_second")]
+    partial class second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,6 +78,9 @@ namespace RentABook.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BookName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float?>("DiscountRatio")
                         .HasColumnType("real");

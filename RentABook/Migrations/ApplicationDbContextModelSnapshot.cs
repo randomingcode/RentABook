@@ -76,6 +76,9 @@ namespace RentABook.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("BookName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<float?>("DiscountRatio")
                         .HasColumnType("real");
 

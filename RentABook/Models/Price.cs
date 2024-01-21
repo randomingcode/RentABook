@@ -20,5 +20,9 @@
 
         public Book Book { get; set; }
 
+        public string? BookName { get; set; }
+
+
+
     }
 }

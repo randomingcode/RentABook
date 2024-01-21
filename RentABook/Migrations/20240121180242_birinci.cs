@@ -5,7 +5,7 @@
 namespace RentABook.Migrations
 {
     /// <inheritdoc />
-    public partial class @as : Migration
+    public partial class birinci : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,8 @@ namespace RentABook.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OriginalPrice = table.Column<double>(type: "float", nullable: false),
                     DiscountRatio = table.Column<float>(type: "real", nullable: true),
-                    DiscountedPrice = table.Column<double>(type: "float", nullable: false)
+                    DiscountedPrice = table.Column<double>(type: "float", nullable: false),
+                    BookName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
