@@ -1,4 +1,5 @@
-﻿using RentABook.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using RentABook.Data;
 using RentABook.Interfaces;
 using RentABook.Models;
 
@@ -13,38 +14,39 @@ namespace RentABook.Repository
         }
         public bool Delete(Price price)
         {
-            
+
+            _context.Remove(price);
             return Save();
         }
 
-        public Task<IEnumerable<Price>> GetAll()
+        public async Task<IEnumerable<Price>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Prices.ToListAsync();
         }
 
-        public Task<IEnumerable<Price>> GetAllBooksByMaxPrice(double maxPrice)
+        public async Task<IEnumerable<Price>> GetAllBooksByMaxPrice(double maxPrice)
         {
-            throw new NotImplementedException();
+            return await _context.Prices.Where(a => a.DiscountedPrice <= maxPrice).ToListAsync();
         }
 
-        public Task<IEnumerable<Price>> GetAllBooksByMinPrice(double minPrice)
+        public async Task<IEnumerable<Price>> GetAllBooksByMinPrice(double minPrice)
         {
-            throw new NotImplementedException();
+            return await _context.Prices.Where(a => a.DiscountedPrice >= minPrice).ToListAsync();
         }
 
-        public Task<IEnumerable<Price>> GetAllBooksByPriceRange(double minPrice, double maxPrice)
+        public async Task<IEnumerable<Price>> GetAllBooksByPriceRange(double minPrice, double maxPrice)
         {
-            throw new NotImplementedException();
+            return await _context.Prices.Where(a => (a.DiscountedPrice >= minPrice && a.DiscountedPrice <= maxPrice)).ToListAsync();
         }
 
         public bool Save()
         {
-            
-           var saved = _context.SaveChanges();
-            
-            return true;
-            
-            
+
+            var saved = _context.SaveChanges();
+
+            return saved > 0 ? true : false;
+
+
         }
 
         public bool UpdatePrice(Price price)

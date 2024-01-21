@@ -21,6 +21,7 @@ namespace RentABook.Repository
         public bool Delete(Book book)
         {
             _context.Remove(book);
+            
             return Save();
         }
 
