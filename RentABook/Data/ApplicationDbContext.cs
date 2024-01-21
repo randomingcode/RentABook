@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityFrameworkCore.Triggers;
+using Microsoft.EntityFrameworkCore;
 using RentABook.Models;
 
 namespace RentABook.Data
@@ -14,7 +15,10 @@ namespace RentABook.Data
 
         public DbSet<Price> Prices { get; set; }
 
-
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return this.SaveChangesWithTriggersAsync(base.SaveChangesAsync, acceptAllChangesOnSuccess: true,cancellationToken:cancellationToken) ;
+        }
 
 
 
