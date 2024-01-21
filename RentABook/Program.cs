@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RentABook.Data;
+using RentABook.Interfaces;
+using RentABook.Repository;
 
 namespace RentABook
 {
@@ -14,10 +16,18 @@ namespace RentABook
 
             var app = builder.Build();
 
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
+            builder.Services.AddScoped<IPriceRepository, PriceRepository>();
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            if (args.Length == 1 && args[0].ToLower() == "seeddata")
+            {
+                Seed.SeedData(app);
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
