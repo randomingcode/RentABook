@@ -16,5 +16,17 @@ namespace RentABook.Controllers
            IEnumerable<Book> books =await _bookRepository.GetAll();
             return View(books);
         }
+
+        public  IActionResult Create() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(bookViewModel bvm)
+        {
+
+            return View();
+        }
     }
 }

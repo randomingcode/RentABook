@@ -1,0 +1,80 @@
+﻿@model bookViewModel
+@* 
+<div class="row">
+    <div class="col">
+        <!-- Name input -->
+        <div data-mdb-input-init class="form-outline">
+            <label asp-for="Title" class="form-label">Kitabın İsmi:</label>
+            <input asp-for="Title" type="text" class="form-control" />  
+        </div>
+    </div>
+    <div class="col">
+        <!-- Author input -->
+        <div data-mdb-input-init class="form-outline">
+            <label asp-for="Author" class="form-label">Yazar:</label>
+            <input asp-for="Author" type="text" class="form-control" />
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col">
+        <!-- Name input -->
+        <div data-mdb-input-init class="form-outline">
+            <input type="text" id="form8Example3" class="form-control" />
+            <label class="form-label" for="form8Example3">First name</label>
+        </div>
+    </div>
+    <div class="col">
+        <!-- Name input -->
+        <div data-mdb-input-init class="form-outline">
+            <input type="text" id="form8Example4" class="form-control" />
+            <label class="form-label" for="form8Example4">Last name</label>
+        </div>
+    </div>
+    <div class="col">
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline">
+            <input type="email" id="form8Example5" class="form-control" />
+            <label class="form-label" for="form8Example5">Email address</label>
+        </div>
+    </div>
+</div> *@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+
+<div class="container-fluid px-1 py-4 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <link href="css/create.css" rel="stylesheet" />
+            <h3>Kitap Ekle</h3>
+            <p class="blue-text">Kitaplarını istediğin süre kadar kiralayabilirsin.</p>
+            <div class="card">
+               
+                <form class="form-card m-3" >
+                    <div class="row justify-content-between text-left ">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Kitabın Adı:<span class="text-danger"> *</span></label> <input asp-for="Title" type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Yazar:<span class="text-danger"> *</span></label> <input asp-for="Author" type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Kiralık Süresi<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Ücret<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Kitap Resmi:<span class="text-danger"> *</span></label> <input type="file" placeholder="resim"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Eklemek istediğin bir not ?<span class="text-danger"> *</span></label> <input type="text" id="ans" name="ans" placeholder="" onblur="validate(6)"> </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-6"> <button type="submit" class="btn btn-success w-100">Ekle</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
